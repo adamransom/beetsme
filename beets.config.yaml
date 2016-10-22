@@ -1,0 +1,19 @@
+library: ~/Music/Library/.librarydb
+directory: ~/Music/Library
+plugins: inline
+per_disc_numbering: yes
+item_fields:
+  disc_and_track: u'%02i_%02i' % (disc, track) if
+                  disctotal > 1 else u'%02i' % (track)
+import:
+  move: yes
+  write: no
+  autotag: no
+  group_albums: yes
+ignore_hidden: yes
+paths:
+  default: $albumartist/$album%aunique{}/$disc_and_track - $title
+  genre:soundtrack: Soundtracks/$album%aunique{}/$disc_and_track - $title
+  comp: Compilations/$album%aunique{}/$disc_and_track - $title
+  singleton: $artist/$title
+  album::^$: $artist/$title

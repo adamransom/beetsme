@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'thor'
+require 'pathname'
+
+APP_ROOT = File.dirname(Pathname.new(__FILE__).realpath)
+
+require File.join(APP_ROOT, 'lib', 'string_utils')
+require File.join(APP_ROOT, 'lib', 'helpers')
+require File.join(APP_ROOT, 'lib', 'cli')
+require File.join(APP_ROOT, 'config')
+ 
+Cli.start(ARGV)
